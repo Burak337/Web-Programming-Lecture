@@ -6,46 +6,26 @@ body {
     color: red;
 }
 
-.field-validation-error span {
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid red;
+}
+
+select.input-validation-error {
+    border: 1px solid red;
+}
+
+input[type=checkbox].input-validation-error {
+    border: 1px solid red;
+}
+
+.validation-summary-errors {
     color: red;
 }
 
-.field-validation-error input {
-    border: 1px solid red;
-}
-
-.field-validation-error textarea {
-    border: 1px solid red;
-}
-
-.field-validation-error select {
-    border: 1px solid red;
-}
-
-.field-validation-error label {
-    color: red;
-}
-
-.field-validation-error .input-validation-error {
-    border: 1px solid red;
-}
-
-.field-validation-error .input-validation-error:focus {
-    border: 1px solid red;
-}
-
-.field-validation-error .input-validation-error:hover {
-    border: 1px solid red;
-}
-
-.field-validation-error .input-validation-error:active {
-    border: 1px solid red;
-}
-
-.field-validation-error .input-validation-error:visited {
-    border: 1px solid red;
-}
-
-.field-validation-error .input-validation-error:link {
-    border: 1px solid red;
+.validation-summary-valid {
+    display: none;
 }
