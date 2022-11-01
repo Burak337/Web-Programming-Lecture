@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "69YUTegsRZgQzw+4417Iekw2cE0v0lj6p0f5/rcWFJc=",
+  "Source": "CourseApp",
+  "BasePath": "_content/CourseApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CourseApp\\wwwroot",
+      "Source": "CourseApp",
+      "ContentRoot": "C:\\Users\\Burak\\Desktop\\CourseApp\\wwwroot\\",
+      "BasePath": "_content/CourseApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Burak\\Desktop\\CourseApp\\wwwroot\\css\\style.css",
+      "SourceId": "CourseApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Burak\\Desktop\\CourseApp\\wwwroot\\",
+      "BasePath": "_content/CourseApp",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    }
+  ]
+}
