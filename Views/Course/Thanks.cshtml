@@ -6,17 +6,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
     <title>Thanks for Registration</title>
 </head>
 <body>
-    <h2>@Model.Name, Hello!</h2>
-    <hr>
-    @if(@Model.Confirm==true){
-        <span>Thank you for your registration!</span>
-        <div><a asp-action="List">View</a> other participants.</div>
-    }
-    else{
-        <span>We are sorry! We hope you change your opinion!</span>
-    }
+    <div class="container m-4">
+        <div class="card mx-auto" style="width:500px;">
+            <div class="card-header">
+                <h3>@Model.Name, Hello!</h3>
+            </div>
+            <div class="card-body">
+                @if(@Model.Confirm==true)
+                {
+                    <p class="card-text">Thansk for your registration!</p>
+                    <div class="card-text"><a asp-action="List">View</a> other participants.</div>
+                }
+                else
+                {
+                    <p class="card-text">We are sorry! We hope you change your opinion.</p>
+                }
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>
