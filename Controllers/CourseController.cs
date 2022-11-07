@@ -21,6 +21,13 @@ public class CourseController : Controller
         course.IsOpened = true;
         return View(course);
     }
+    public IActionResult Thanks(student std)
+    {
+        // ViewBag.stdName = TempData["stdName"];
+        // ViewBag.stdConfirm = TempData["stdConfirm"];
+        return View(std);
+    }
+
     [HttpGet]
     public IActionResult Apply()
     { //for only view Apply.cshtml
@@ -33,7 +40,13 @@ public class CourseController : Controller
         {
             //save data in repository
             Repository.AddStudent(std);
-            return View("Thanks", std); //redirect Thanks.cshtml for listing data
+
+            //While using this tempdata we dont send directly std object. 
+            //That's mean std's datas will not be visible on link bar.
+            //We need to change Thanks.cshtml also.
+            // TempData["stdName"] = std.Name;
+            // TempData["stdConfirm"] = std.Confirm;
+            return RedirectToAction("Thanks", std); //redirect Thanks.cshtml for listing data
         }
         else
         {
