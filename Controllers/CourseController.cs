@@ -8,18 +8,59 @@ public class CourseController : Controller
     {
         return View();
     }
+
+    //Examples for returning type
+
+    /*public IActionResult Index1()
+    {
+        return RedirectToAction("List");
+    }
+    public IActionResult Index2()
+    {
+        return NotFound();
+    }
+    public IActionResult Index3()
+    {
+        return Unauthorized();
+
+    }
+    public IActionResult Index4()
+    {
+        return Redirect("Index");
+    }
+    public IActionResult Index5()
+    {
+        return Content("Hello World");
+    }*/
+    //----------------------------------------------
+
     public IActionResult List()
     {
         var s = Repository.studs.Where(i => i.Confirm == true);
         return View(s);
     }
-    public IActionResult Details()
+    public IActionResult Details(int? id, string? sortby)
     {
-        var course = new Course();
-        course.Name = "ASP.Net Core MVC";
-        course.Description = "MVC Fundamentals";
-        course.IsOpened = true;
-        return View(course);
+        // var course = new Course();
+        // course.Name = "ASP.Net Core MVC";
+        // course.Description = "MVC Fundamentals";
+        // course.IsOpened = true;
+        // return View(course);
+
+        if (!id.HasValue)
+        {
+            id = 1;
+        }
+        if (string.IsNullOrWhiteSpace(sortby))
+        {
+            sortby = "name";
+        }
+        {
+            sortby = "name";
+        }
+
+        return Content("id: " + id + " sortby: " + sortby);
+
     }
     public IActionResult Thanks(student std)
     {
@@ -53,5 +94,9 @@ public class CourseController : Controller
             return View(std);
         }
 
+    }
+    public IActionResult ByReleased(int year, int month)
+    {
+        return Content("year: " + year + " month: " + month);
     }
 }

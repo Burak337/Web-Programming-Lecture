@@ -10,6 +10,13 @@ var app = builder.Build();
 // localhost:5000/course/details
 
 app.UseRouting();
+
+app.MapControllerRoute(
+    "CoursesByReleased",
+    "courses/released/{year}/{month}",
+    new { Controller = "Course", Action = "ByReleased" },
+    new { year = @"\d{4}", month = @"\d{2}" }
+);
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
