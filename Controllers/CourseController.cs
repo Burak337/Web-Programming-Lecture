@@ -1,12 +1,39 @@
 namespace CourseApp.Controllers;
 using CourseApp.Models;
+using CourseApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+
 
 public class CourseController : Controller
 {
     public IActionResult Index()
     {
-        return View();
+        var kurs = new Course()
+        {
+            Name = "Web Programming",
+            Description = "Asp.net core mvc",
+            IsOpened = true
+        };
+        var ogr = new List<student>()
+        {
+            new student(){Name="Ali"},
+            new student(){Name="Veli"},
+            new student(){Name="Ayşe"},
+            new student(){Name="Fatma"},
+            new student(){Name="Ahmet"}
+
+        };
+
+        var viewmodel = new CourseStudentViewModel();
+        viewmodel.crs = kurs;
+        viewmodel.std = ogr;
+
+
+
+        // ViewData["Course"] = kurs;
+        // ViewBag.course = kurs;
+        // ViewBag.count = 10;
+        return View(viewmodel);
     }
 
     //Examples for returning type

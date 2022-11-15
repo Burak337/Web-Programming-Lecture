@@ -1,3 +1,9 @@
+@model CourseApp.ViewModels.CourseStudentViewModel
+
+@{
+    var classname = Model.std.Count >3 ? "popular" : null;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +13,26 @@
     <link rel="stylesheet" href="/Modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/style.css">
     <title>Course Controller</title>
+    <style>
+        .popular{
+            color: green;
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
-    <p>Index file in Course Controller</p>
-    
+    <h1 class="@classname">@Model.crs.Name</h1>
+
+
+    @if(Model.std.Count==0){
+        <text>There isn't any participant in this course.</text>
+    }
+    else{
+        <ul>
+            @foreach(var item in Model.std){
+                <li>@item.Name</li>
+            }
+        </ul>
+    }
 </body>
 </html>
